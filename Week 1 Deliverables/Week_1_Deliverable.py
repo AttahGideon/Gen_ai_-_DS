@@ -1,0 +1,23 @@
+# Create a python program that simulates a game of rock, paper, scissors between the user and the computer.
+import random
+def play_game():
+    options = ['rock', 'paper', 'scissors']
+    user_choice = input('Make your move:').lower()
+    if user_choice not in options:
+        return 'Invalid' 
+    
+    computer_choice = random.choice(options)
+    print('Computer choice is :',computer_choice)
+
+    if user_choice == computer_choice:
+        return 'Tie'
+    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
+     (user_choice == 'paper' and computer_choice == 'rock') or \
+     (user_choice == 'scissors' and computer_choice == 'paper'):
+        return 'User wins!'
+    else:
+        return 'Computer wins!'
+
+
+print(play_game())
+
